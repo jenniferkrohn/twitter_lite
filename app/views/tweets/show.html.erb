@@ -12,3 +12,54 @@
 
 <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
 <%= link_to 'Back', tweets_path %>
+
+<p id="peek">Where</p>
+<button type="button" id="showMe()">Where is he</button>
+<br />
+<p id="adding">What is 42 + 108?</p>
+<button type="button" onclick="showSum(42, 108)">Add it!</button>
+<br />
+<br />
+<p id="answer1">What does HTML stand for?</p>
+<p id="answer2">What does CSS stand for?</p>
+<br />
+<p class = "paragraph1">This tex is only temp.</p>
+<p class = "paragraph2">This is text. Say goodbye</p>
+<button id ="change-paragraphs">Change It Up</button>
+
+
+<script>
+	function showMe(){
+		document.getElementById('peek').innerHTML = "Here I am!";
+	}
+
+	function addItUp(x,y) {
+		var sum = x + y;
+		return sum;
+	}
+
+	function showSum(x,y) {
+		document.getElementById('adding').innerHTML = addItUp();		
+	}
+
+	function htmlAcronym() {
+		document.getElementById('answer1').innerHTML = "Hypertext blah";
+	}
+
+	function cssAcronym() {
+		document.getElementById('answer2').innerHTML = "stylesheets yada";
+	}
+
+		$(document).ready(function(){
+			$("#peek").click(function(){
+				$(this).html("Here I am");
+			});
+
+		$("#change_paragraphs").click(function(){
+			$("paragraph1").html("Replace text #1");
+			$("paragraph2").html("Replace text #2");
+		});
+
+
+	});
+</script>

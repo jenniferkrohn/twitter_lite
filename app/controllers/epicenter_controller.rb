@@ -22,7 +22,7 @@ class EpicenterController < ApplicationController
 
   	current_user.save
 
-    redirect_to :controller => 'tweets', :action => :index
+    # redirect_to :controller => 'tweets', :action => :index
     
   end
 
@@ -33,6 +33,6 @@ class EpicenterController < ApplicationController
 
     current_user.save
 
-    redirect_to :controller => 'tweets', :action => :index
+    # redirect_to :controller => 'tweets', :action => :index
   end
 end

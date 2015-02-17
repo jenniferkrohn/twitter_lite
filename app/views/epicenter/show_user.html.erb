@@ -22,7 +22,8 @@
           <div class="cant-see-me">
             <%= number_field_tag :unfollow_id, @user.id %>
           </div>
-        <%= submit_tag "Unfollow", class: "btn btn-danger" %>
+        <%= submit_tag "Unfollow", class: "btn btn-primary", 
+            id: "unfollow_btn"%>
         <% end %>
       </div>
 
@@ -37,3 +38,17 @@
       </div>
   <% end %>
 <% end %>
+
+<script>
+  $(document).ready(function(){
+    $('#follow_btn').hover(function(){
+      $(this).removeClass("btn-primary");
+      $(this).addClass("btn-danger");
+      $(this).attr('value','Unfollow');
+    }, function(){
+      $(this).attr('value', 'Following');
+      $(this).removeClass("btn-danger");
+      $(this).addClass("btn-primary");
+    });
+  });
+</script>
