@@ -21,6 +21,9 @@ class EpicenterController < ApplicationController
   	current_user.following.push(params[:follow_id].to_i)
 
   	current_user.save
+
+    redirect_to :controller => 'tweets', :action => :index
+    
   end
 
   def unfollow
@@ -29,5 +32,7 @@ class EpicenterController < ApplicationController
     current_user.following.delete(params[:unfollow_id].to_i)
 
     current_user.save
+
+    redirect_to :controller => 'tweets', :action => :index
   end
 end

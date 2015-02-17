@@ -14,8 +14,8 @@
   <div class="form-group">
     <%= f.text_field :message, placeholder: "What do you have to say?", class: "form-control" %>
   </div>
-  <div class="field cant-see-me">
-    <%= f.number_field :user_id, value: current_user.id %>
+  <div class="form-group cant-see-me">
+    <%= f.number_field :user_id, value: current_user.id, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit "Tweet It!", class: "btn btn-primary" %>
